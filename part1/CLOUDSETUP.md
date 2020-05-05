@@ -40,8 +40,29 @@ In this lab you will learn how to:
 - Press the **Next** button
 - Unzip the hardhat-dataset.zip that was downloaded in the previous section.
   - Make certain you extract / unzip the .zip file.
-- Navigate to the files on your computer
-- Drag the ```_annotations.json``` and the ```images``` directory
+- Navigate to the extracted files on your computer
+- Drag the ```_annotations.json``` into bucket.
+- A progress bar and a confirmation will display.
+
+<table style="width: 100%">
+    <colgroup>
+       <col span="1" style="width: 33%;">
+       <col span="1" style="width: 33%;">
+       <col span="1" style="width: 33%;">
+    </colgroup>
+<tr>
+<td>
+<img width="25%" height="25%" src="./images/COS-Upload-1.png">
+</td>
+<td>
+<img width="25%" height="25%" src="./images/COS-Upload-2.png">
+</td>
+<td>
+<img width="25%" height="25%" src="./images/COS-Upload-3.png">
+</td>
+</table>
+
+and the ```images``` directory
 
 
 

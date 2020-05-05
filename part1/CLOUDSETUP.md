@@ -16,7 +16,35 @@ In this lab you will learn how to:
 - Upload the hard hat dataset to COS
 - Create Watson Machine Learning instance
 
-###
+### Login to IBM Cloud
+
+- Visit [IBM Cloud](http://cloud.ibm.com) and, if you don't yet have an account, register for a (free) IBM Cloud Lite account.
+![IBM Cloud login](/images/IBM-Cloud-Login.png)
+
+### Create a Cloud Object Storage instance
+
+- IBM Cloud will provision 25GB for free.
+- Visit the [IBM Cloud Catalog](https://cloud.ibm.com/catalog/services/cloud-object-storage) COS page.
+- Click on the **Create** button
+  ![COS Create](/images/COS-Create.png)
+
+### Create a Cloud Object Storage bucket
+
+- Click on the **Create bucket** button
+  ![COS Create Bucket](/images/COS-CreateBucket.png)
+
+- Select a **Standard** predefined bucket
+- Name your bucket ```hardhat-detection-<your-initials>```
+- The bucket name must be unique across the whole IBM Cloud Object Storage system
+  ![COS Bucket name](/images/COS-BucketName.png)
+- Press the **Next** button
+- Unzip the hardhat-dataset.zip that was downloaded in the previous section.
+  - Make certain you extract / unzip the .zip file.
+- Navigate to the files on your computer
+- Drag the ```_annotations.json``` and the ```images``` directory
+
+
+
 
 You are now ready to train your Tensorflow hard hat model, so proceed to the next [Train Model section](/part1/TRAIN.md).
 

@@ -41,7 +41,7 @@ In this lab you will learn how to:
 - Unzip the hardhat-dataset.zip that was downloaded in the previous section.
   - Make certain you extract / unzip the .zip file.
 - Navigate to the extracted files on your computer
-- Drag the ```_annotations.json``` into bucket.
+- Drag the ```_annotations.json``` into the bucket.
 - A progress bar and a confirmation will display.
 
 <table style="width: 100%">
@@ -52,18 +52,22 @@ In this lab you will learn how to:
     </colgroup>
 <tr>
 <td>
-<img width="25%" height="25%" src="./images/COS-Upload-1.png">
+<img src="/images/COS-Upload-1.png">
 </td>
 <td>
-<img width="25%" height="25%" src="./images/COS-Upload-2.png">
+<img src="/images/COS-Upload-2.png">
 </td>
 <td>
-<img width="25%" height="25%" src="./images/COS-Upload-3.png">
+<img src="/images/COS-Upload-3.png">
 </td>
 </table>
 
-and the ```images``` directory
-
+- Hold off on uploading the ```images``` folder images until the next step where you will be able to upload the entire folder.
+- Press the **Next** button.
+- On the next panel, scroll down and press the **View bucket configuration** button
+- On the next panel, in the left navigation sidebar, click on **Objects**
+- Then, expand the **Upload** dropdown and choose **Folder**
+  ![COS Folder Upload](/images/COS-Upload-Folder-1.png)
 
 
 

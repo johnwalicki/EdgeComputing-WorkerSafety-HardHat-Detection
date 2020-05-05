@@ -85,7 +85,7 @@ This section shows you how to create an instance of Cloud Object Storage (COS) i
 
 This section demonstrates how to install the Cloud Annotations cacli, train a Tensorflow model, download the model, set up a sample localhost web application and test model on your laptop.
 
-- Instructions : [Create IBM Cloud Resources](part1/TRAIN.md)
+- Instructions : [Train your Hard Hat model](part1/TRAIN.md)
 
 ## Part 2 - Configure a Jetson Nano
 

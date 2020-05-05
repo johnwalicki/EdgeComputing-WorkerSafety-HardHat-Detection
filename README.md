@@ -1,9 +1,24 @@
 # Edge Computing Worker Safety Hard Hat Detection
 Protect workers with a TensorFlow Hard Hat object detection model running on a Jetson Nano
 
+## Overview
+
+In this code pattern, we will describe how to implement a workplace safety use case using open source edge computing technologies and IBM's management architecture for deploying AI workloads to edge devices.
+
+In many factory environments, when employees enter a designated area, they must be wearing proper Personal Protective Equipment (PPE) such as a hard hat. This pattern demonstrates a solution which monitors the designated area and issues an alert only when an employee has been detected and is not wearing a hard hat. To reduce load on the network, the video stream object detection will be performed on edge devices managed by Open Horizon and IBM Edge Application Manager.
+
+To implement the architecture, the following components are required:
+
+- Models need to be trained to identify a person wearing a hard hat. This is accomplished using IBM Cloud Annotations and Watson Machine Learning.
+
+- The models need to be containerized and deployed to the edge. This is accomplished using [Open Horizon](https://www.lfedge.org/projects/openhorizon/)
+
+- Models need to be deployed to the camera to identify a human which will trigger the camera to start streaming. This is done using [IBM Edge Application Manager](https://developer.ibm.com/components/ibm-edge-application-manager/).
+
+
 ## Architecture diagram
 
-The following diagram shows the workflow for a
+The following diagram shows the workflow for the workplace safety hard hat detection system.
 
 ![Edge Architecture Diagram](/images/edge-objectdetection-arch-diagram.png)
 
@@ -15,9 +30,9 @@ In this code pattern you will learn how to:
 - Label a dataset of hard hat images with White / Blue / Yellow / Person objects using Cloud Annotations
 - Create an instance of Cloud Object Storage (COS) in IBM Cloud
 - Upload the hard hat dataset to COS
-- Create Watson Machine Learning instance
-- Install Cloud Annotations cacli
-- Train a Tensorflow model
+- Create a Watson Machine Learning instance
+- Install Cloud Annotations command line interface - cacli
+- Train a Tensorflow model using Watson Machine Learning
 - Download the model with the cacli
 - git clone object-detection-react
 - Test model on your laptop
@@ -25,7 +40,7 @@ In this code pattern you will learn how to:
 ### Part 2
 
 - Set up a Jetson Nano with Ubuntu
-- Attach a USB webcam, use a 5V barrel power supply to provide sufficient power
+- Attach a USB webcam and use a 5V barrel power supply to provide sufficient power
 - Download the hard hat model with the cacli
 - git clone object-detection-react
 - Test model on the Jetson
@@ -33,9 +48,9 @@ In this code pattern you will learn how to:
 ### Part 3
 
 - Set up a laptop with HZN Exchange Hub Services
-- On your Jetson Nano, Install docker
+- Install docker on your Jetson Nano
 - Install Open Horizon HZN anax client
-- Register Jetson HZN anax client into Hub
+- Register the Jetson into the Hub using the Open Horizon HZN anax client
 
 ### Part 4
 
@@ -118,11 +133,10 @@ ___
 [**Home**](/README.md) - [Label Data](/part1/LABEL.md) - [Cloud Setup](/part1/CLOUDSETUP.md) - [Train Model](/part1/TRAIN.md) - [Setup Jetson](/part2/JETSON.md) - [Edge Inferencing](/part2/EDGEINFER.md) - [Horizon Hub](/part3/HZNHUB.md) - [Horizon Client](/part3/HZNCLIENT.md) - [Docker Model](/part4/DOCKERMODEL.md) - [Horizon Deploy](/part4/HZNDEPLOY.md)
 ___
 
-Enjoy!  Give me [feedback](https://github.com/johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection/issues) if you have suggestions on how to improve this node.
+Enjoy!  Give me [feedback](https://github.com/johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection/issues) if you have suggestions on how to improve this workshop.
 
 ## License
 
 This workshop and code examples are licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](http://www.apache.org/licenses/LICENSE-2.0.txt).
 
 [Apache Software License (ASL) FAQ](http://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
-

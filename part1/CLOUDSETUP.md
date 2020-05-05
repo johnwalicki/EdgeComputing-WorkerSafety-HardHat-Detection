@@ -62,15 +62,18 @@ In this lab you will learn how to:
 </td>
 </table>
 
-- Hold off on uploading the ```images``` folder images until the next step where you will be able to upload the entire folder.
+- Hold off on uploading the ```images``` folder until the next step where you will be able to upload the entire folder.
 - Press the **Next** button.
-- On the next panel, scroll down and press the **View bucket configuration** button
+- On the next panel, scroll down and press the **View bucket configuration** button.
 - On the next panel, in the left navigation sidebar, click on **Objects**
 - Then, expand the **Upload** dropdown and choose **Folder**
   ![COS Folder Upload](/images/COS-Upload-Folder-1.png)
-
-
-
+- Click on **Select folders**
+- In the file dialog, navigate and select the **images** folder that you have extracted.
+- A progress bar and a confirmation will display.
+  ![COS Folder Upload](/images/COS-Upload-Folder-2.png)
+- Congratulations - You have uploaded the hardhat model dataset to IBM Cloud Object Storage.
+***
 You are now ready to train your Tensorflow hard hat model, so proceed to the next [Train Model section](/part1/TRAIN.md).
 
 ***

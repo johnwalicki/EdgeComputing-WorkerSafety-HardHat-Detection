@@ -66,13 +66,26 @@ In this lab you will learn how to:
 - Press the **Next** button.
 - On the next panel, scroll down and press the **View bucket configuration** button.
 - On the next panel, in the left navigation sidebar, click on **Objects**
-- Then, expand the **Upload** dropdown and choose **Folder**
+- Then, expand the **Upload** dropdown, and choose **Folders**
   ![COS Folder Upload](/images/COS-Upload-Folder-1.png)
-- Click on **Select folders**
-- In the file dialog, navigate and select the **images** folder that you have extracted.
-- A progress bar and a confirmation will display.
+- In the popup dialog, click on **Select folders**
+- A operating system file dialog will open, navigate and select the **images** folder that you have extracted.
+- A progress bar and a confirmation will display as the files are uploaded.
   ![COS Folder Upload](/images/COS-Upload-Folder-2.png)
 - Congratulations - You have uploaded the hardhat model dataset to IBM Cloud Object Storage.
+
+### Create an Watson Machine Learning Instance
+
+- Visit the [IBM Cloud Catalog](https://cloud.ibm.com/catalog/services/machine-learning)
+- Search for **Watson Machine Learning**
+  ![Catalog WML](/images/IBM-Cloud-Catalog-search-WML.png)
+- Click on the Machine Learning tile
+  ![WML Service](/images/IBM-Cloud-Catalog-WML.png)
+- Click on the **Create** button
+  ![WML Create](/images/IBM-Cloud-WML-Create.png)
+- You now have a **Watson Machine Learning** instance which will be used to train your Hard Hat model.
+  ![WML Instance](/images/IBM-Cloud-WML-Instance.png)
+
 ***
 You are now ready to train your Tensorflow hard hat model, so proceed to the next [Train Model section](/part1/TRAIN.md).
 

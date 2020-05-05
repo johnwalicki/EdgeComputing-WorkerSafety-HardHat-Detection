@@ -50,6 +50,7 @@ This tutorial can be completed using an IBM Cloud Lite account.
 - Create an [IBM Cloud account](https://cloud.ibm.com)
 - Log into [IBM Cloud](https://cloud.ibm.com/login)
 - Nvidia Jetson Nano
+  - If you do not have a Jetson Nano or Jetson TX2, you can still complete Sections 1,2,3
 
 ## Part 1 - Build a Hard Hat Object Detection Model
 
@@ -114,6 +115,8 @@ This final section demonstrates how to register the workload pattern on the Exch
 - Instructions : [Deploy Horizon Pattern](part4/HZNDEPLOY.md)
 
 ___
+[**Home**](/README.md) - [Label Data](/part1/LABEL.md) - [Cloud Setup](/part1/CLOUDSETUP.md) - [Train Model](/part1/TRAIN.md) - [Setup Jetson](/part2/JETSON.md) - [Edge Inferencing](/part2/EDGEINFER.md) - [Horizon Hub](/part3/HZNHUB.md) - [Horizon Client](/part3/HZNCLIENT.md) - [Docker Model](/part4/DOCKERMODEL.md) - [Horizon Deploy](/part4/HZNDEPLOY.md)
+___
 
 Enjoy!  Give me [feedback](https://github.com/johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection/issues) if you have suggestions on how to improve this node.
 
@@ -123,4 +126,3 @@ This workshop and code examples are licensed under the Apache Software License, 
 
 [Apache Software License (ASL) FAQ](http://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
 
-[Home](/README.md) - [Part 1](../part1/README.md) - [Part 2](../part2/README.md) - [Part 3](../part3/README.md) - [Part 4](../part4/README.md)

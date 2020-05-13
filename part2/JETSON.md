@@ -37,6 +37,10 @@ sudo nvpmodel -m 0
 
 Object Detection does not require the highest quality camera.  Most images will get scaled down. Find a reasonably priced webcam.  The Sony Play Station Eye Camera for PS3 is only a few dollars. Check for Linux compatibility when making your choice.
 
+### Internet Connectivity
+
+You will need an ethernet cable (the Jetson Nano developer kit does not include WiFi) or a WiFi USB dongle.
+
 ### Now the fun begins!
 
 You are now ready to run the hard hat model on the Jetson edge device, so proceed to the next [Edge Inferencing section](/part2/EDGEINFER.md).

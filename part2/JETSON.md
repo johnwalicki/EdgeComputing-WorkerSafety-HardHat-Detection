@@ -35,7 +35,7 @@ sudo nvpmodel -m 0
 
 ### Attach a USB Web camera
 
-Object Detection does not require the highest camera.  Most images will get scaled down. Find a reasonably priced webcam.  The Sony Play Station Eye Camera for PS3 is only a few dollars. Check for Linux compatibility when making your choice.
+Object Detection does not require the highest quality camera.  Most images will get scaled down. Find a reasonably priced webcam.  The Sony Play Station Eye Camera for PS3 is only a few dollars. Check for Linux compatibility when making your choice.
 
 ### Now the fun begins!
 

@@ -31,9 +31,9 @@ The cacli is available for Linux, Mac, Windows.  Follow the [download and instal
 ### Cloud Annotations - Login / List Models
 
 - Login to your IBM Cloud account using ```cacli login``` and answer the OTP prompts
-```
-$ cacli login
-```
+  ```
+  $ cacli login
+  ```
   ![cacli login](/images/cacli-login.png)
 
 - List training runs and trained models
@@ -45,20 +45,20 @@ $ cacli login
 ### Download your hard hat object detection model
 
 - Download the model
-```
-$ cacli download model-58sdpqyx
-success download complete
-```
+  ```
+  $ cacli download model-58sdpqyx
+  success download complete
+  ```
   ![cacli download](/images/cacli-download.png)
 
 ### Install node.js
 
 Before we can run the Object Detection web application on your Jetson Nano, these commands install Node.js
 
-```bash
-$ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-$ sudo apt-get install -y nodejs
-```
+  ```bash
+  $ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+  $ sudo apt-get install -y nodejs
+  ```
 
 ### Set up a Object Detection web application on your Jetson Nano
 
@@ -66,17 +66,17 @@ The [Cloud Annotations github repository](https://github.com/cloud-annotations) 
 
 - Follow the [README.md instructions](https://github.com/cloud-annotations/object-detection-react/blob/master/README.md)
 - (or) Run these commands:
-```
-$ git clone git@github.com:cloud-annotations/object-detection-react.git
-$ cd object-detection-react
-$ npm install
-```
+  ```
+  $ git clone git@github.com:cloud-annotations/object-detection-react.git
+  $ cd object-detection-react
+  $ npm install
+  ```
 - Move the **model_web** directory created by the ```cacli download``` into the ```public``` folder of this repo directory. On the Ubuntu Linux system I just create a symlink.
 
 - Start the server
-```
-$ npm start
-```
+  ```
+  $ npm start
+  ```
 
 ## Test the Hard Hat model on your Jetson Nano
 

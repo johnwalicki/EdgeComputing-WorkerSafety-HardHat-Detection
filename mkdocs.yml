@@ -1,0 +1,56 @@
+site_name: Edge Computing Worker Safety Hard Hat Detection
+site_description: >-
+  This code pattern demonstrates how to protect workers with a TensorFlow Hard Hat object detection model running on a Jetson Nano edge device.
+site_url: https://johnwalicki.github.io/EdgeComputing-WorkerSafety-HardHat-Detection
+site_author: John Walicki
+repo_name: johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection
+repo_url: https://github.com/johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection
+edit_uri: edit/main/docs/
+theme:
+    name: material
+    custom_dir: theme/
+    icon:
+        logo: material/school
+        repo: fontawesome/brands/github
+use_directory_urls: false
+plugins:
+  - search
+markdown_extensions:
+  - attr_list
+  - admonition
+  - toc:
+      permalink: true
+      toc_depth: 3
+extra_css:
+    - css/extra.css
+    - css/pdf-print.css
+nav:
+  - Introduction: README.md
+  - 1 - Build a Hard Hat Object Detection Model:
+    - Introduction: part1/README.md
+    - Label Hard Hat Data: part1/LABEL.md
+    - Create IBM Cloud Resources: part1/CLOUDSETUP.md
+    - Train your Hard Hat model: part1/TRAIN.md
+  - 2 - Build a Dashboard Application
+    - Introduction: part2/README.md
+    - Install Node-RED: part2/install.md
+    - Installing Nodes: part2/installing-nodes.md
+    - TensorFlow in Node-RED: part2/adding-tf.md
+    - Create a dashboard: part2/create-dashboard.md
+    - Displaying detected objects: part2/display-objects.md
+  - 3 - Configure a Jetson Nano:
+    - Introduction: part3/README.md
+    - Configure Nvidia Jetson Nano: part3/JETSON.md
+    - Deploy / Test Model on the Jetson: part3/EDGEINFER.md
+  - 4 - Open Horizon:
+    - Introduction: part4/README.md
+    - Open Horizon Exchange Hub Services: part4/HZNHUB.md
+    - Open Horizon agent on the Jetson: part4/HZNCLIENT.md
+  - 5 - Containerized Workloads:
+    - Introduction: part5/README.md
+    - Build a multistage Dockerfile: part5/DOCKERFILE.md
+    - Build a MultiArch Docker Image: part5/DOCKERMODEL.md
+    - Deploy container to DockerHub: part5/DOCKERDEPLOY.md
+  - 6 - IEAM / Horizon Exchange Hub:
+    - Introduction: part6/README.md
+    - Deploy Horizon Pattern: part6/HZNDEPLOY.md

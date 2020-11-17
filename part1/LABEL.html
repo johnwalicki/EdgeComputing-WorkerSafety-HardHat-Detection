@@ -790,7 +790,7 @@
 <h3 id="hard-hat-image-data-set">Hard Hat Image Data Set<a class="headerlink" href="#hard-hat-image-data-set" title="Permanent link">&para;</a></h3>
 <p>Create a set of videos with individuals wearing hardhats in several industrial factory settings. Make sure to include varied scenarios with different lighting conditions. If you have different colored hats that you want to recognize, you might record video of people wearing blue, white, yellow hard hats. Use a tool to capture frames at the desired time interval from the videos in your data set.  Label each frame with objects that are of interest - blue, white, yellow hard hats and people.  Draw bounding boxes around the objects. Repeat this step for all frames.</p>
 <p>To proceed with this code pattern example, several hundred annotated and labeled hard hat images are provided in this repository.</p>
-<p><img alt="Worker Safety Hard Hat Labeled Image" src="/images/WorkerSafety-HardHat-Labeled-Image.png" /></p>
+<p><img alt="Worker Safety Hard Hat Labeled Image" src="../images/WorkerSafety-HardHat-Labeled-Image.png" /></p>
 <h3 id="cloud-annotations">Cloud Annotations<a class="headerlink" href="#cloud-annotations" title="Permanent link">&para;</a></h3>
 <p>Cloud Annotations makes labeling images and training machine learning models easy. Whether you’ve never touched a line of code in your life or you’re a TensorFlow ninja, the <a href="https://cloud.annotations.ai/docs">Cloud Annotations docs</a> will help you build what you need.</p>
 <p>The Cloud Annotations tool will help you <a href="https://cloud.annotations.ai/docs#preparing-training-data">prepare the training data</a>.  To sound the alarms, our worker safety use case needs to identify <strong>localized hard hat objects</strong> in the frames.</p>
@@ -800,7 +800,7 @@
 - <strong>Size</strong> : How large the object is with respect to the image dimensions.</p>
 <p>Cloud Annotations stores the annotated labeled metadata in a file named <code>_annotations.json</code> and images in a directory named <code>images</code>. Cloud Annotations stores this training set in IBM Cloud Object Storage.</p>
 <h3 id="download-the-hard-hat-training-dataset">Download the Hard Hat training dataset<a class="headerlink" href="#download-the-hard-hat-training-dataset" title="Permanent link">&para;</a></h3>
-<p><a href="/dataset/hardhat-dataset.zip">Download</a> the Hart Hat annotated labeled metadata and images (50MB zipfile) to your system.  In the next section we will upload the training data to IBM Cloud Object Storage (COS).</p>
+<p><a href="https://github.com/johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection/dataset/hardhat-dataset.zip">Download</a> the Hart Hat annotated labeled metadata and images (50MB zipfile) to your system.  In the next section we will upload the training data to IBM Cloud Object Storage (COS).</p>
 <hr />
 <p>You are now ready to set up your IBM Cloud resources, so proceed to the next <a href="CLOUDSETUP.html">Cloud Setup section</a>.</p>
                 

@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://johnwalicki.github.io/EdgeComputing-WorkerSafety-HardHat-Detection/part2/create-dashboard.html">
+        <link rel="canonical" href="https://johnwalicki.github.io/EdgeComputing-WorkerSafety-HardHat-Detection/part5/dockerdeploy.html">
       
       
         <meta name="author" content="John Walicki">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Create a dashboard - Edge Computing Worker Safety Hard Hat Detection</title>
+        <title>Deploy container to DockerHub - Edge Computing Worker Safety Hard Hat Detection</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#create-a-dashboard" class="md-skip">
+        <a href="#push-to-docker-hub" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Create a dashboard
+              Deploy container to DockerHub
             
           </span>
         </div>
@@ -280,12 +280,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
     <label class="md-nav__link" for="nav-3">
       2 - Build a Dashboard Application
       <span class="md-nav__icon md-icon"></span>
@@ -304,7 +302,7 @@
 
 
   <li class="md-nav__item">
-    <a href="index.html" class="md-nav__link">
+    <a href="../part2/index.html" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -316,7 +314,7 @@
 
 
   <li class="md-nav__item">
-    <a href="install.html" class="md-nav__link">
+    <a href="../part2/install.html" class="md-nav__link">
       Install Node-RED
     </a>
   </li>
@@ -328,7 +326,7 @@
 
 
   <li class="md-nav__item">
-    <a href="installing-nodes.html" class="md-nav__link">
+    <a href="../part2/installing-nodes.html" class="md-nav__link">
       Installing Nodes
     </a>
   </li>
@@ -340,7 +338,7 @@
 
 
   <li class="md-nav__item">
-    <a href="adding-tf.html" class="md-nav__link">
+    <a href="../part2/adding-tf.html" class="md-nav__link">
       TensorFlow in Node-RED
     </a>
   </li>
@@ -350,63 +348,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Create a dashboard
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="create-dashboard.html" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../part2/create-dashboard.html" class="md-nav__link">
       Create a dashboard
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dashboard-layouts" class="md-nav__link">
-    Dashboard Layouts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dashboard-sidebar" class="md-nav__link">
-    Dashboard Sidebar
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    Next Steps
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -416,7 +362,7 @@
 
 
   <li class="md-nav__item">
-    <a href="display-objects.html" class="md-nav__link">
+    <a href="../part2/display-objects.html" class="md-nav__link">
       Displaying detected objects
     </a>
   </li>
@@ -553,10 +499,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
     <label class="md-nav__link" for="nav-6">
       5 - Containerized Workloads
       <span class="md-nav__icon md-icon"></span>
@@ -575,7 +523,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part5/index.html" class="md-nav__link">
+    <a href="index.html" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -587,7 +535,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part5/package.html" class="md-nav__link">
+    <a href="package.html" class="md-nav__link">
       Package file
     </a>
   </li>
@@ -599,7 +547,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part5/settings.html" class="md-nav__link">
+    <a href="settings.html" class="md-nav__link">
       Settings file
     </a>
   </li>
@@ -611,7 +559,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part5/dockerfile.html" class="md-nav__link">
+    <a href="dockerfile.html" class="md-nav__link">
       Build a multistage Dockerfile
     </a>
   </li>
@@ -621,11 +569,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../part5/dockerdeploy.html" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="dockerdeploy.html" class="md-nav__link md-nav__link--active">
       Deploy container to DockerHub
     </a>
+    
   </li>
 
         
@@ -700,35 +657,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dashboard-layouts" class="md-nav__link">
-    Dashboard Layouts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dashboard-sidebar" class="md-nav__link">
-    Dashboard Sidebar
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    Next Steps
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -739,50 +667,14 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection/edit/main/docs/part2/create-dashboard.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection/edit/main/docs/part5/dockerdeploy.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="create-a-dashboard">Create a dashboard<a class="headerlink" href="#create-a-dashboard" title="Permanent link">&para;</a></h1>
-<p>In this part of the workshop you will begin to create your Hard Hat Detection application.</p>
-<h2 id="dashboard-layouts">Dashboard Layouts<a class="headerlink" href="#dashboard-layouts" title="Permanent link">&para;</a></h2>
-<p>The Dashboard uses a grid based layout. Widgets, such as buttons or text boxes, are
-given a size in grid-cells. They are packed into a group that has a defined width.
-The Groups are then placed on a Tab - laid out using a flow-based layout, filling
-the width of the page before wrapping. This arrangement provides some flexibility
-in how the page displays on different screen sizes.</p>
-<h2 id="dashboard-sidebar">Dashboard Sidebar<a class="headerlink" href="#dashboard-sidebar" title="Permanent link">&para;</a></h2>
-<p>Within the editor, the Dashboard module provides a sidebar where you can customize
-its features as well as manage its tabs, groups and widgets.</p>
-<ol>
-<li>Open the Dashboard sidebar</li>
-<li>Click the <code>+ tab</code> button to create a new tab.</li>
-<li>
-<p>Hover over the newly added tab and click the <code>edit</code> button.</p>
-<p><img alt="" src="../images/db-sidebar.png" style="width: 250px" /></p>
-</li>
-<li>
-<p>In the edit dialog, give the tab a name of <code>AI Photo Booth</code> and click Update
-   to close the dialog.</p>
-</li>
-<li>Hover over the tab again and click the <code>+ group</code> button.</li>
-<li>
-<p>Edit the new group and set its properties:</p>
-<p><img alt="" src="../images/db-group.png" style="width: 250px" /></p>
-<ul>
-<li>Set the name to 'WebCam'</li>
-<li>Set the width to <code>10</code> by clicking the button and dragging the box out to 10
-  units wide.</li>
-<li>Untick the 'Display group name' option</li>
-</ul>
-<p><img alt="" src="../images/db-group-edit.png" style="width: 300px" /></p>
-</li>
-</ol>
-<p>This has created the initial layout components needed for the dashboard. You can
-now start to add content.</p>
-<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
-<p>The next task is to <a href="adding-controls.md">add some different controls to the dashboard</a>.</p>
+                <h1 id="push-to-docker-hub">Push to Docker Hub<a class="headerlink" href="#push-to-docker-hub" title="Permanent link">&para;</a></h1>
+<p>The final task is to push the Docker container to Docker Hub so that the IEAM /
+Horizon Hub Exchange can be configured and so that Edge devices can pull it down. </p>
                 
               
               
@@ -801,7 +693,7 @@ now start to add content.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="adding-tf.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="dockerfile.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -810,19 +702,19 @@ now start to add content.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                TensorFlow in Node-RED
+                Build a multistage Dockerfile
               </div>
             </div>
           </a>
         
         
-          <a href="display-objects.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../part6/index.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Displaying detected objects
+                Introduction
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

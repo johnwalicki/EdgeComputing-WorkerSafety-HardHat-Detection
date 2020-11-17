@@ -8,10 +8,6 @@ repo_url: https://github.com/johnwalicki/EdgeComputing-WorkerSafety-HardHat-Dete
 edit_uri: edit/main/docs/
 theme:
     name: material
-    custom_dir: theme/
-    icon:
-        logo: material/school
-        repo: fontawesome/brands/github
 use_directory_urls: false
 plugins:
   - search
@@ -31,7 +27,7 @@ nav:
     - Label Hard Hat Data: part1/LABEL.md
     - Create IBM Cloud Resources: part1/CLOUDSETUP.md
     - Train your Hard Hat model: part1/TRAIN.md
-  - 2 - Build a Dashboard Application
+  - 2 - Build a Dashboard Application:
     - Introduction: part2/README.md
     - Install Node-RED: part2/install.md
     - Installing Nodes: part2/installing-nodes.md

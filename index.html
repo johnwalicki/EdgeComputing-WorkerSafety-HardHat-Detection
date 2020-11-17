@@ -10,12 +10,12 @@
       
       
       
-        <link rel="canonical" href="https://johnwalicki.github.io/EdgeComputing-WorkerSafety-HardHat-Detection/part1/index.html">
+        <link rel="canonical" href="https://johnwalicki.github.io/EdgeComputing-WorkerSafety-HardHat-Detection/index.html">
       
       
         <meta name="author" content="John Walicki">
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <link rel="shortcut icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.5">
     
     
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.21aed14c.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.21aed14c.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.196e0c26.min.css">
         
       
     
@@ -42,9 +42,9 @@
     
     
     
-      <link rel="stylesheet" href="../css/extra.css">
+      <link rel="stylesheet" href="css/extra.css">
     
-      <link rel="stylesheet" href="../css/pdf-print.css">
+      <link rel="stylesheet" href="css/pdf-print.css">
     
     
       
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#part-1-build-a-hard-hat-object-detection-model" class="md-skip">
+        <a href="#edge-computing-worker-safety-hard-hat-detection" class="md-skip">
           Skip to content
         </a>
       
@@ -195,46 +195,14 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../index.html" class="md-nav__link">
-      Introduction
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
-    <label class="md-nav__link" for="nav-2">
-      1 - Build a Hard Hat Object Detection Model
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="1 - Build a Hard Hat Object Detection Model" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        <span class="md-nav__icon md-icon"></span>
-        1 - Build a Hard Hat Object Detection Model
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
   
 
 
   <li class="md-nav__item md-nav__item--active">
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -250,12 +218,76 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-diagram" class="md-nav__link">
+    Architecture diagram
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    Learning Objectives:
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning Objectives:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1" class="md-nav__link">
+    Part 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2" class="md-nav__link">
+    Part 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3" class="md-nav__link">
+    Part 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-4" class="md-nav__link">
+    Part 4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#part-1-build-a-hard-hat-object-detection-model" class="md-nav__link">
@@ -291,10 +323,130 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#part-2-configure-a-jetson-nano" class="md-nav__link">
+    Part 2 - Configure a Jetson Nano
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2 - Configure a Jetson Nano">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#section-4-jetson-nano-setup" class="md-nav__link">
+    Section 4 - Jetson Nano setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-5-deploy-and-test-hard-hat-object-detection" class="md-nav__link">
+    Section 5 - Deploy and Test Hard Hat Object Detection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-open-horizon" class="md-nav__link">
+    Part 3 - Open Horizon
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3 - Open Horizon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#section-6-open-horizon-exchange-hub" class="md-nav__link">
+    Section 6 - Open Horizon Exchange Hub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-7-open-horizon-client-setup" class="md-nav__link">
+    Section 7 - Open Horizon client setup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-" class="md-nav__link">
+    Part 4 -
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4 -">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#section-8-containizer-your-model-in-a-docker-image" class="md-nav__link">
+    Section 8 - Containizer your model in a Docker image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-9-register-and-deploy-the-pattern-to-the-edge" class="md-nav__link">
+    Section 9 - Register and deploy the Pattern to the edge
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+    <label class="md-nav__link" for="nav-2">
+      1 - Build a Hard Hat Object Detection Model
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="1 - Build a Hard Hat Object Detection Model" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        1 - Build a Hard Hat Object Detection Model
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="part1/index.html" class="md-nav__link">
+      Introduction
+    </a>
   </li>
 
         
@@ -304,7 +456,7 @@
 
 
   <li class="md-nav__item">
-    <a href="LABEL.html" class="md-nav__link">
+    <a href="part1/LABEL.html" class="md-nav__link">
       Label Hard Hat Data
     </a>
   </li>
@@ -316,7 +468,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CLOUDSETUP.html" class="md-nav__link">
+    <a href="part1/CLOUDSETUP.html" class="md-nav__link">
       Create IBM Cloud Resources
     </a>
   </li>
@@ -328,7 +480,7 @@
 
 
   <li class="md-nav__item">
-    <a href="TRAIN.html" class="md-nav__link">
+    <a href="part1/TRAIN.html" class="md-nav__link">
       Train your Hard Hat model
     </a>
   </li>
@@ -365,7 +517,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part2/index.html" class="md-nav__link">
+    <a href="part2/index.html" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -377,7 +529,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part2/install.html" class="md-nav__link">
+    <a href="part2/install.html" class="md-nav__link">
       Install Node-RED
     </a>
   </li>
@@ -389,7 +541,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part2/installing-nodes.html" class="md-nav__link">
+    <a href="part2/installing-nodes.html" class="md-nav__link">
       Installing Nodes
     </a>
   </li>
@@ -401,7 +553,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part2/adding-tf.html" class="md-nav__link">
+    <a href="part2/adding-tf.html" class="md-nav__link">
       TensorFlow in Node-RED
     </a>
   </li>
@@ -413,7 +565,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part2/create-dashboard.html" class="md-nav__link">
+    <a href="part2/create-dashboard.html" class="md-nav__link">
       Create a dashboard
     </a>
   </li>
@@ -425,7 +577,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part2/display-objects.html" class="md-nav__link">
+    <a href="part2/display-objects.html" class="md-nav__link">
       Displaying detected objects
     </a>
   </li>
@@ -462,7 +614,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part3/index.html" class="md-nav__link">
+    <a href="part3/index.html" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -474,7 +626,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part3/JETSON.html" class="md-nav__link">
+    <a href="part3/JETSON.html" class="md-nav__link">
       Configure Nvidia Jetson Nano
     </a>
   </li>
@@ -486,7 +638,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part3/EDGEINFER.html" class="md-nav__link">
+    <a href="part3/EDGEINFER.html" class="md-nav__link">
       Deploy / Test Model on the Jetson
     </a>
   </li>
@@ -523,7 +675,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part4/index.html" class="md-nav__link">
+    <a href="part4/index.html" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -535,7 +687,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part4/HZNHUB.html" class="md-nav__link">
+    <a href="part4/HZNHUB.html" class="md-nav__link">
       Open Horizon Exchange Hub Services
     </a>
   </li>
@@ -547,7 +699,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part4/HZNCLIENT.html" class="md-nav__link">
+    <a href="part4/HZNCLIENT.html" class="md-nav__link">
       Open Horizon agent on the Jetson
     </a>
   </li>
@@ -584,7 +736,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part5/index.html" class="md-nav__link">
+    <a href="part5/index.html" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -596,7 +748,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part5/package.html" class="md-nav__link">
+    <a href="part5/package.html" class="md-nav__link">
       Package file
     </a>
   </li>
@@ -608,7 +760,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part5/settings.html" class="md-nav__link">
+    <a href="part5/settings.html" class="md-nav__link">
       Settings file
     </a>
   </li>
@@ -620,7 +772,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part5/dockerfile.html" class="md-nav__link">
+    <a href="part5/dockerfile.html" class="md-nav__link">
       Build a multistage Dockerfile
     </a>
   </li>
@@ -632,7 +784,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part5/DOCKERMODEL.md" class="md-nav__link">
+    <a href="part5/DOCKERMODEL.md" class="md-nav__link">
       Build a MultiArch Docker Image
     </a>
   </li>
@@ -644,7 +796,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part5/DOCKERDEPLOY.md" class="md-nav__link">
+    <a href="part5/DOCKERDEPLOY.md" class="md-nav__link">
       Deploy container to DockerHub
     </a>
   </li>
@@ -681,7 +833,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part6/index.html" class="md-nav__link">
+    <a href="part6/index.html" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -693,7 +845,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part6/HZNDEPLOY.html" class="md-nav__link">
+    <a href="part6/HZNDEPLOY.html" class="md-nav__link">
       Deploy Horizon Pattern
     </a>
   </li>
@@ -718,12 +870,76 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-diagram" class="md-nav__link">
+    Architecture diagram
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    Learning Objectives:
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning Objectives:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1" class="md-nav__link">
+    Part 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2" class="md-nav__link">
+    Part 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3" class="md-nav__link">
+    Part 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-4" class="md-nav__link">
+    Part 4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#part-1-build-a-hard-hat-object-detection-model" class="md-nav__link">
@@ -759,6 +975,94 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#part-2-configure-a-jetson-nano" class="md-nav__link">
+    Part 2 - Configure a Jetson Nano
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2 - Configure a Jetson Nano">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#section-4-jetson-nano-setup" class="md-nav__link">
+    Section 4 - Jetson Nano setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-5-deploy-and-test-hard-hat-object-detection" class="md-nav__link">
+    Section 5 - Deploy and Test Hard Hat Object Detection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-open-horizon" class="md-nav__link">
+    Part 3 - Open Horizon
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3 - Open Horizon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#section-6-open-horizon-exchange-hub" class="md-nav__link">
+    Section 6 - Open Horizon Exchange Hub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-7-open-horizon-client-setup" class="md-nav__link">
+    Section 7 - Open Horizon client setup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-" class="md-nav__link">
+    Part 4 -
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4 -">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#section-8-containizer-your-model-in-a-docker-image" class="md-nav__link">
+    Section 8 - Containizer your model in a Docker image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-9-register-and-deploy-the-pattern-to-the-edge" class="md-nav__link">
+    Section 9 - Register and deploy the Pattern to the edge
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -771,29 +1075,128 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection/edit/main/docs/part1/README.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection/edit/main/docs/README.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Introduction</h1>
-                
-                <h2 id="part-1-build-a-hard-hat-object-detection-model">Part 1 - Build a Hard Hat Object Detection Model<a class="headerlink" href="#part-1-build-a-hard-hat-object-detection-model" title="Permanent link">&para;</a></h2>
+                <h1 id="edge-computing-worker-safety-hard-hat-detection">Edge Computing Worker Safety Hard Hat Detection<a class="headerlink" href="#edge-computing-worker-safety-hard-hat-detection" title="Permanent link">&para;</a></h1>
+<p>Protect workers with a TensorFlow Hard Hat object detection model running on a Jetson Nano</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>In this code pattern, we will describe how to implement a workplace safety use case using open source edge computing technologies and IBM's management architecture for deploying AI workloads to edge devices.</p>
+<p>In many factory environments, when employees enter a designated area, they must be wearing proper Personal Protective Equipment (PPE) such as a hard hat. This pattern demonstrates a solution which monitors the designated area and issues an alert only when an employee has been detected and is not wearing a hard hat. To reduce load on the network, the video stream object detection will be performed on edge devices managed by Open Horizon and IBM Edge Application Manager.</p>
+<p>To implement the architecture, the following components are required:</p>
+<ul>
+<li>
+<p>Models need to be trained to identify a person wearing a hard hat. This is accomplished using IBM Cloud Annotations and Watson Machine Learning.</p>
+</li>
+<li>
+<p>The models need to be containerized and deployed to the edge. This is accomplished using <a href="https://www.lfedge.org/projects/openhorizon/">Open Horizon</a></p>
+</li>
+<li>
+<p>Models need to be deployed to the camera to identify a human which will trigger the camera to start streaming. This is done using <a href="https://developer.ibm.com/components/ibm-edge-application-manager/">IBM Edge Application Manager</a>.</p>
+</li>
+</ul>
+<h2 id="architecture-diagram">Architecture diagram<a class="headerlink" href="#architecture-diagram" title="Permanent link">&para;</a></h2>
+<p>The following diagram shows the workflow for the workplace safety hard hat detection system.</p>
+<p><img alt="Edge Architecture Diagram" src="/images/edge-objectdetection-arch-diagram.png" /></p>
+<h2 id="learning-objectives">Learning Objectives:<a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h2>
+<p>In this code pattern you will learn how to:</p>
+<h3 id="part-1">Part 1<a class="headerlink" href="#part-1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Label a dataset of hard hat images with White / Blue / Yellow / Person objects using Cloud Annotations</li>
+<li>Create an instance of Cloud Object Storage (COS) in IBM Cloud</li>
+<li>Upload the hard hat dataset to COS</li>
+<li>Create a Watson Machine Learning instance</li>
+<li>Install Cloud Annotations command line interface - cacli</li>
+<li>Train a Tensorflow model using Watson Machine Learning</li>
+<li>Download the model with the cacli</li>
+<li>git clone object-detection-react</li>
+<li>Test model on your laptop</li>
+</ul>
+<h3 id="part-2">Part 2<a class="headerlink" href="#part-2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Set up a Jetson Nano with Ubuntu</li>
+<li>Attach a USB webcam and use a 5V barrel power supply to provide sufficient power</li>
+<li>Download the hard hat model with the cacli</li>
+<li>git clone object-detection-react</li>
+<li>Test model on the Jetson</li>
+</ul>
+<h3 id="part-3">Part 3<a class="headerlink" href="#part-3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Set up a laptop with HZN Exchange Hub Services</li>
+<li>Install docker on your Jetson Nano</li>
+<li>Install Open Horizon HZN anax client</li>
+<li>Register the Jetson into the Hub using the Open Horizon HZN anax client</li>
+</ul>
+<h3 id="part-4">Part 4<a class="headerlink" href="#part-4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Build a docker image which contains the model</li>
+<li>Register the workload pattern on the Exchange server</li>
+<li>Deploy the pattern to the edge device</li>
+</ul>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This tutorial can be completed using an IBM Cloud Lite account.</p>
+<ul>
+<li>Create an <a href="https://cloud.ibm.com">IBM Cloud account</a></li>
+<li>Log into <a href="https://cloud.ibm.com/login">IBM Cloud</a></li>
+<li>Nvidia Jetson Nano</li>
+<li>If you do not have a Jetson Nano or Jetson TX2, you can still complete Sections 1,2,3</li>
+</ul>
+<h2 id="part-1-build-a-hard-hat-object-detection-model">Part 1 - Build a Hard Hat Object Detection Model<a class="headerlink" href="#part-1-build-a-hard-hat-object-detection-model" title="Permanent link">&para;</a></h2>
 <h3 id="section-1-label-a-dataset-of-hard-hat-images-with-white-blue-yellow-person-objects">Section 1 - Label a dataset of hard hat images with White / Blue / Yellow / Person objects<a class="headerlink" href="#section-1-label-a-dataset-of-hard-hat-images-with-white-blue-yellow-person-objects" title="Permanent link">&para;</a></h3>
 <p>This section shows you how to use Cloud Annotations to label a dataset of hard hat images with White / Blue / Yellow / Person objects</p>
 <ul>
-<li>Instructions : <a href="LABEL.html">Label Hard Hat Data</a></li>
+<li>Instructions : <a href="part1/LABEL.html">Label Hard Hat Data</a></li>
 </ul>
 <h3 id="section-2-create-ibm-cloud-resources">Section 2 - Create IBM Cloud resources<a class="headerlink" href="#section-2-create-ibm-cloud-resources" title="Permanent link">&para;</a></h3>
 <p>This section shows you how to create an instance of Cloud Object Storage (COS) in IBM Cloud. Create a COS bucket and upload the hard hat dataset to COS.  Finally create Watson Machine Learning instance.</p>
 <ul>
-<li>Instructions : <a href="CLOUDSETUP.html">Create IBM Cloud Resources</a></li>
+<li>Instructions : <a href="part1/CLOUDSETUP.html">Create IBM Cloud Resources</a></li>
 </ul>
 <h3 id="section-3-train-and-test-a-hard-hat-detection-model">Section 3 - Train and Test a Hard Hat Detection Model<a class="headerlink" href="#section-3-train-and-test-a-hard-hat-detection-model" title="Permanent link">&para;</a></h3>
 <p>This section demonstrates how to install the Cloud Annotations cacli, train a Tensorflow model, download the model, set up a sample localhost web application and test model on your laptop.</p>
 <ul>
-<li>Instructions : <a href="TRAIN.html">Train your Hard Hat model</a></li>
+<li>Instructions : <a href="part1/TRAIN.html">Train your Hard Hat model</a></li>
 </ul>
+<h2 id="part-2-configure-a-jetson-nano">Part 2 - Configure a Jetson Nano<a class="headerlink" href="#part-2-configure-a-jetson-nano" title="Permanent link">&para;</a></h2>
+<h3 id="section-4-jetson-nano-setup">Section 4 - Jetson Nano setup<a class="headerlink" href="#section-4-jetson-nano-setup" title="Permanent link">&para;</a></h3>
+<p>This section shows you how to configure a Jetson Nano to run object detection.</p>
+<ul>
+<li>Instructions : <a href="part2/JETSON.md">Configure Nvidia Jetson Nano</a></li>
+</ul>
+<h3 id="section-5-deploy-and-test-hard-hat-object-detection">Section 5 - Deploy and Test Hard Hat Object Detection<a class="headerlink" href="#section-5-deploy-and-test-hard-hat-object-detection" title="Permanent link">&para;</a></h3>
+<p>This section shows you how to download and test the hard hat model.</p>
+<ul>
+<li>Instructions : <a href="part2/EDGEINFER.md">Deploy / Test Model on the Jetson</a></li>
+</ul>
+<h2 id="part-3-open-horizon">Part 3 - Open Horizon<a class="headerlink" href="#part-3-open-horizon" title="Permanent link">&para;</a></h2>
+<h3 id="section-6-open-horizon-exchange-hub">Section 6 - Open Horizon Exchange Hub<a class="headerlink" href="#section-6-open-horizon-exchange-hub" title="Permanent link">&para;</a></h3>
+<p>This section guides you through the set up of a laptop with HZN Exchange Hub Services</p>
+<ul>
+<li>Instructions : <a href="part3/HZNHUB.md">Open Horizon Exchange Hub Services</a></li>
+</ul>
+<h3 id="section-7-open-horizon-client-setup">Section 7 - Open Horizon client setup<a class="headerlink" href="#section-7-open-horizon-client-setup" title="Permanent link">&para;</a></h3>
+<p>Learn how to install Open Horizon HZN anax client and register the Jetson HZN anax client into your hub.</p>
+<ul>
+<li>Instructions : <a href="part3/HZNCLIENT.md">Open Horizon agent on the Jetson</a></li>
+</ul>
+<h2 id="part-4-">Part 4 -<a class="headerlink" href="#part-4-" title="Permanent link">&para;</a></h2>
+<h3 id="section-8-containizer-your-model-in-a-docker-image">Section 8 - Containizer your model in a Docker image<a class="headerlink" href="#section-8-containizer-your-model-in-a-docker-image" title="Permanent link">&para;</a></h3>
+<p>This section shows you how to build a docker image with a model</p>
+<ul>
+<li>Instructions : <a href="part4/DOCKERMODEL.md">Build a Docker Image</a></li>
+</ul>
+<h3 id="section-9-register-and-deploy-the-pattern-to-the-edge">Section 9 - Register and deploy the Pattern to the edge<a class="headerlink" href="#section-9-register-and-deploy-the-pattern-to-the-edge" title="Permanent link">&para;</a></h3>
+<p>This final section demonstrates how to register the workload pattern on the Exchange server and deploy the pattern to the edge device.</p>
+<ul>
+<li>Instructions : <a href="part4/HZNDEPLOY.md">Deploy Horizon Pattern</a></li>
+</ul>
+<hr />
+<p>Enjoy!  Give me <a href="https://github.com/johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection/issues">feedback</a> if you have suggestions on how to improve this workshop.</p>
+<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>This workshop and code examples are licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the <a href="https://developercertificate.org/">Developer Certificate of Origin, Version 1.1 (DCO)</a> and the <a href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache Software License, Version 2</a>.</p>
+<p><a href="http://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN">Apache Software License (ASL) FAQ</a></p>
                 
               
               
@@ -812,28 +1215,14 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../index.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Introduction
-              </div>
-            </div>
-          </a>
         
-        
-          <a href="LABEL.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="part1/index.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Label Hard Hat Data
+                Introduction
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -860,15 +1249,15 @@
       
     </div>
     
-      <script src="../assets/javascripts/vendor.7e0ee788.min.js"></script>
-      <script src="../assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: "..",
+          base: ".",
           features: [],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

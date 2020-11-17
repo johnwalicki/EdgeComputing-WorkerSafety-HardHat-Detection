@@ -79,4 +79,4 @@ Node-RED editor - the tool used to build your applications.
 
 ## Next Steps
 
-The next task is to [enable the Projects feature](projects.md).
+The next task is to [Install extra nodes into the palette](installing-nodes.md).

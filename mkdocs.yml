@@ -44,7 +44,9 @@ nav:
     - Open Horizon agent on the Jetson: part4/HZNCLIENT.md
   - 5 - Containerized Workloads:
     - Introduction: part5/README.md
-    - Build a multistage Dockerfile: part5/DOCKERFILE.md
+    - Package file: part5/package.md
+    - Settings file: part5/settings.md
+    - Build a multistage Dockerfile: part5/dockerfile.md
     - Build a MultiArch Docker Image: part5/DOCKERMODEL.md
     - Deploy container to DockerHub: part5/DOCKERDEPLOY.md
   - 6 - IEAM / Horizon Exchange Hub:

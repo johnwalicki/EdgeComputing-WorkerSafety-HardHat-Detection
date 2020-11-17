@@ -1,0 +1,872 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="This code pattern demonstrates how to protect workers with a TensorFlow Hard Hat object detection model running on a Jetson Nano edge device.">
+      
+      
+      
+        <link rel="canonical" href="https://johnwalicki.github.io/EdgeComputing-WorkerSafety-HardHat-Detection/part1/LABEL.html">
+      
+      
+        <meta name="author" content="John Walicki">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.5">
+    
+    
+      
+        <title>Label Hard Hat Data - Edge Computing Worker Safety Hard Hat Detection</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.21aed14c.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="../css/pdf-print.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#edge-computing-worker-safety-hard-hat-detection-section-1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://johnwalicki.github.io/EdgeComputing-WorkerSafety-HardHat-Detection" title="Edge Computing Worker Safety Hard Hat Detection" class="md-header-nav__button md-logo" aria-label="Edge Computing Worker Safety Hard Hat Detection">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Edge Computing Worker Safety Hard Hat Detection
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Label Hard Hat Data
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://johnwalicki.github.io/EdgeComputing-WorkerSafety-HardHat-Detection" title="Edge Computing Worker Safety Hard Hat Detection" class="md-nav__button md-logo" aria-label="Edge Computing Worker Safety Hard Hat Detection">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Edge Computing Worker Safety Hard Hat Detection
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../README.md" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    <label class="md-nav__link" for="nav-2">
+      1 - Build a Hard Hat Object Detection Model
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="1 - Build a Hard Hat Object Detection Model" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        1 - Build a Hard Hat Object Detection Model
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="README.md" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Label Hard Hat Data
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="LABEL.html" class="md-nav__link md-nav__link--active">
+      Label Hard Hat Data
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#label-a-dataset-of-hard-hat-images-with-white-blue-yellow-person-objects" class="md-nav__link">
+    Label a dataset of hard hat images with White / Blue / Yellow / Person objects
+  </a>
+  
+    <nav class="md-nav" aria-label="Label a dataset of hard hat images with White / Blue / Yellow / Person objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lab-objectives" class="md-nav__link">
+    Lab Objectives
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-hat-image-data-set" class="md-nav__link">
+    Hard Hat Image Data Set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-annotations" class="md-nav__link">
+    Cloud Annotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-the-hard-hat-training-dataset" class="md-nav__link">
+    Download the Hard Hat training dataset
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="CLOUDSETUP.html" class="md-nav__link">
+      Create IBM Cloud Resources
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="TRAIN.html" class="md-nav__link">
+      Train your Hard Hat model
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+    <label class="md-nav__link" for="nav-3">
+      2 - Build a Dashboard Application
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="2 - Build a Dashboard Application" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        2 - Build a Dashboard Application
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../part2/index.html" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../part2/install.html" class="md-nav__link">
+      Install Node-RED
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../part2/installing-nodes.html" class="md-nav__link">
+      Installing Nodes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../part2/adding-tf.html" class="md-nav__link">
+      TensorFlow in Node-RED
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../part2/create-dashboard.html" class="md-nav__link">
+      Create a dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../part2/display-objects.html" class="md-nav__link">
+      Displaying detected objects
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+    <label class="md-nav__link" for="nav-4">
+      3 - Configure a Jetson Nano
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="3 - Configure a Jetson Nano" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        3 - Configure a Jetson Nano
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../part3/index.html" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../part3/JETSON.html" class="md-nav__link">
+      Configure Nvidia Jetson Nano
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../part3/EDGEINFER.html" class="md-nav__link">
+      Deploy / Test Model on the Jetson
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+    <label class="md-nav__link" for="nav-5">
+      4 - Open Horizon
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="4 - Open Horizon" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        4 - Open Horizon
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../part4/index.html" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../part4/HZNHUB.html" class="md-nav__link">
+      Open Horizon Exchange Hub Services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../part4/HZNCLIENT.html" class="md-nav__link">
+      Open Horizon agent on the Jetson
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
+    <label class="md-nav__link" for="nav-6">
+      5 - Containerized Workloads
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="5 - Containerized Workloads" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        5 - Containerized Workloads
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../part5/index.html" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../part5/DOCKERFILE.md" class="md-nav__link">
+      Build a multistage Dockerfile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../part5/DOCKERMODEL.md" class="md-nav__link">
+      Build a MultiArch Docker Image
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../part5/DOCKERDEPLOY.md" class="md-nav__link">
+      Deploy container to DockerHub
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
+    <label class="md-nav__link" for="nav-7">
+      6 - IEAM / Horizon Exchange Hub
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="6 - IEAM / Horizon Exchange Hub" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        6 - IEAM / Horizon Exchange Hub
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../part6/index.html" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../part6/HZNDEPLOY.html" class="md-nav__link">
+      Deploy Horizon Pattern
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#label-a-dataset-of-hard-hat-images-with-white-blue-yellow-person-objects" class="md-nav__link">
+    Label a dataset of hard hat images with White / Blue / Yellow / Person objects
+  </a>
+  
+    <nav class="md-nav" aria-label="Label a dataset of hard hat images with White / Blue / Yellow / Person objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lab-objectives" class="md-nav__link">
+    Lab Objectives
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-hat-image-data-set" class="md-nav__link">
+    Hard Hat Image Data Set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-annotations" class="md-nav__link">
+    Cloud Annotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-the-hard-hat-training-dataset" class="md-nav__link">
+    Download the Hard Hat training dataset
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection/edit/main/docs/part1/LABEL.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <p><em>Quick links :</em>
+<a href="/README.md">Home</a> - <a href="/part1/LABEL.md"><strong>Label Data</strong></a> - <a href="/part1/CLOUDSETUP.md">Cloud Setup</a> - <a href="/part1/TRAIN.md">Train Model</a> - <a href="/part2/JETSON.md">Setup Jetson</a> - <a href="/part2/EDGEINFER.md">Edge Inferencing</a> - <a href="/part3/HZNHUB.md">Horizon Hub</a> - <a href="/part3/HZNCLIENT.md">Horizon Client</a> - <a href="/part4/DOCKERMODEL.md">Docker Model</a> - <a href="/part4/HZNDEPLOY.md">Horizon Deploy</a></p>
+<hr />
+<h1 id="edge-computing-worker-safety-hard-hat-detection-section-1">Edge Computing Worker Safety Hard Hat Detection - Section 1<a class="headerlink" href="#edge-computing-worker-safety-hard-hat-detection-section-1" title="Permanent link">&para;</a></h1>
+<h2 id="label-a-dataset-of-hard-hat-images-with-white-blue-yellow-person-objects">Label a dataset of hard hat images with White / Blue / Yellow / Person objects<a class="headerlink" href="#label-a-dataset-of-hard-hat-images-with-white-blue-yellow-person-objects" title="Permanent link">&para;</a></h2>
+<p>This section shows you how to use Cloud Annotations to label a dataset of hard hat images with White / Blue / Yellow / Person objects.</p>
+<h3 id="lab-objectives">Lab Objectives<a class="headerlink" href="#lab-objectives" title="Permanent link">&para;</a></h3>
+<p>In this lab you will learn how to:</p>
+<ul>
+<li>Label a dataset of hard hat images with White / Blue / Yellow / Person objects using Cloud Annotations</li>
+</ul>
+<h3 id="hard-hat-image-data-set">Hard Hat Image Data Set<a class="headerlink" href="#hard-hat-image-data-set" title="Permanent link">&para;</a></h3>
+<p>Create a set of videos with individuals wearing hardhats in several industrial factory settings. Make sure to include varied scenarios with different lighting conditions. If you have different colored hats that you want to recognize, you might record video of people wearing blue, white, yellow hard hats. Use a tool to capture frames at the desired time interval from the videos in your data set.  Label each frame with objects that are of interest - blue, white, yellow hard hats and people.  Draw bounding boxes around the objects. Repeat this step for all frames.</p>
+<p>To proceed with this code pattern example, several hundred annotated and labeled hard hat images are provided in this repository.</p>
+<p><img alt="Worker Safety Hard Hat Labeled Image" src="/images/WorkerSafety-HardHat-Labeled-Image.png" /></p>
+<h3 id="cloud-annotations">Cloud Annotations<a class="headerlink" href="#cloud-annotations" title="Permanent link">&para;</a></h3>
+<p>Cloud Annotations makes labeling images and training machine learning models easy. Whether you’ve never touched a line of code in your life or you’re a TensorFlow ninja, the <a href="https://cloud.annotations.ai/docs">Cloud Annotations docs</a> will help you build what you need.</p>
+<p>The Cloud Annotations tool will help you <a href="https://cloud.annotations.ai/docs#preparing-training-data">prepare the training data</a>.  To sound the alarms, our worker safety use case needs to identify <strong>localized hard hat objects</strong> in the frames.</p>
+<p>A classification model can tell you what an image is and how confident it is about it’s decision. An localized object detection model can provide you with much more information:
+- <strong>Location</strong> : The coordinates and area of where the object is in the image.
+- <strong>Count</strong> : The number of objects found in the image.
+- <strong>Size</strong> : How large the object is with respect to the image dimensions.</p>
+<p>Cloud Annotations stores the annotated labeled metadata in a file named <code>_annotations.json</code> and images in a directory named <code>images</code>. Cloud Annotations stores this training set in IBM Cloud Object Storage.</p>
+<h3 id="download-the-hard-hat-training-dataset">Download the Hard Hat training dataset<a class="headerlink" href="#download-the-hard-hat-training-dataset" title="Permanent link">&para;</a></h3>
+<p><a href="/dataset/hardhat-dataset.zip">Download</a> the Hart Hat annotated labeled metadata and images (50MB zipfile) to your system.  In the next section we will upload the training data to IBM Cloud Object Storage (COS).</p>
+<hr />
+<p>You are now ready to set up your IBM Cloud resources, so proceed to the next <a href="/part1/CLOUDSETUP.md">Cloud Setup section</a>.</p>
+<hr />
+<p><a href="/README.md">Home</a> - <a href="/part1/LABEL.md"><strong>Label Data</strong></a> - <a href="/part1/CLOUDSETUP.md">Cloud Setup</a> - <a href="/part1/TRAIN.md">Train Model</a> - <a href="/part2/JETSON.md">Setup Jetson</a> - <a href="/part2/EDGEINFER.md">Edge Inferencing</a> - <a href="/part3/HZNHUB.md">Horizon Hub</a> - <a href="/part3/HZNCLIENT.md">Horizon Client</a> - <a href="/part4/DOCKERMODEL.md">Docker Model</a> - <a href="/part4/HZNDEPLOY.md">Horizon Deploy</a></p>
+<hr />
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+        
+          <a href="CLOUDSETUP.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Create IBM Cloud Resources
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

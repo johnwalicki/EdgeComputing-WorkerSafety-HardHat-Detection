@@ -21,6 +21,6 @@ In this part of the tutorial you will:
 
  - [Install Node-RED](install.md)
  - [Install extra nodes into the palette](installing-nodes.md)
- - [Add more controls to the dashboard](adding-controls.md)
+ - [Create your initial Hard Hat Detection Dashboard](create-dashboard.md)
  - [Add TensorFlow to the Hard Hat Detection dashboard](adding-tf.md)
  - [Display detected objects on the dashboard](display-objects.md)

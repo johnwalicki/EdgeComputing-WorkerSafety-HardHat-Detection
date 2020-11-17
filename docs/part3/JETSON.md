@@ -1,9 +1,3 @@
-*Quick links :*
-[Home](/README.md) - [Label Data](/part1/LABEL.md) - [Cloud Setup](/part1/CLOUDSETUP.md) - [Train Model](/part1/TRAIN.md) - [**Setup Jetson**](/part2/JETSON.md) - [Edge Inferencing](/part2/EDGEINFER.md) - [Horizon Hub](/part3/HZNHUB.md) - [Horizon Client](/part3/HZNCLIENT.md) - [Docker Model](/part4/DOCKERMODEL.md) - [Horizon Deploy](/part4/HZNDEPLOY.md)
-***
-
-# Edge Computing Worker Safety Hard Hat Detection - Section 4
-
 ## Jetson Nano setup
 
 This section shows you how to configure a Jetson Nano to run object detection.
@@ -33,9 +27,9 @@ Once you are powering the Jetson Nano with a 5V barrel jack power supply, you ca
 sudo nvpmodel -m 0
 ```
 
-### Attach a USB Web camera
+### Attach a Android IP Web camera app
 
-Object Detection does not require the highest quality camera.  Most images will get scaled down. Find a reasonably priced webcam.  The Sony Play Station Eye Camera for PS3 is only a few dollars. Check for Linux compatibility when making your choice.
+Object Detection does not require the highest quality camera.  Most images will get scaled down.
 
 ### Internet Connectivity
 
@@ -43,9 +37,4 @@ You will need an ethernet cable (the Jetson Nano developer kit does not include 
 
 ### Now the fun begins!
 
-You are now ready to run the hard hat model on the Jetson edge device, so proceed to the next [Edge Inferencing section](/part2/EDGEINFER.md).
-
-
-***
-[Home](/README.md) - [Label Data](/part1/LABEL.md) - [Cloud Setup](/part1/CLOUDSETUP.md) - [Train Model](/part1/TRAIN.md) - [**Setup Jetson**](/part2/JETSON.md) - [Edge Inferencing](/part2/EDGEINFER.md) - [Horizon Hub](/part3/HZNHUB.md) - [Horizon Client](/part3/HZNCLIENT.md) - [Docker Model](/part4/DOCKERMODEL.md) - [Horizon Deploy](/part4/HZNDEPLOY.md)
-***
+You are now ready to run the hard hat model on the Jetson edge device, so proceed to the next [Edge Inferencing section](EDGEINFER.md).

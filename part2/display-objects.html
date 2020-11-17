@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="John Walicki">
+        <link rel="canonical" href="https://johnwalicki.github.io/EdgeComputing-WorkerSafety-HardHat-Detection/part2/display-objects.html">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Displaying detected objects - Edge Computing Worker Safety Hard Hat Detection</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/extra.css" rel="stylesheet">
+        <link href="../css/pdf-print.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Edge Computing Worker Safety Hard Hat Detection</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../README.md" class="nav-link">Introduction</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">1 - Build a Hard Hat Object Detection Model <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../part1/README.md" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../part1/LABEL.html" class="dropdown-item">Label Hard Hat Data</a>
+</li>
+                                    
+<li>
+    <a href="../part1/CLOUDSETUP.html" class="dropdown-item">Create IBM Cloud Resources</a>
+</li>
+                                    
+<li>
+    <a href="../part1/TRAIN.html" class="dropdown-item">Train your Hard Hat model</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">2 - Build a Dashboard Application <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="index.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="install.html" class="dropdown-item">Install Node-RED</a>
+</li>
+                                    
+<li>
+    <a href="installing-nodes.html" class="dropdown-item">Installing Nodes</a>
+</li>
+                                    
+<li>
+    <a href="adding-tf.html" class="dropdown-item">TensorFlow in Node-RED</a>
+</li>
+                                    
+<li>
+    <a href="create-dashboard.html" class="dropdown-item">Create a dashboard</a>
+</li>
+                                    
+<li>
+    <a href="display-objects.html" class="dropdown-item active">Displaying detected objects</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">3 - Configure a Jetson Nano <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../part3/index.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../part3/JETSON.html" class="dropdown-item">Configure Nvidia Jetson Nano</a>
+</li>
+                                    
+<li>
+    <a href="../part3/EDGEINFER.html" class="dropdown-item">Deploy / Test Model on the Jetson</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">4 - Open Horizon <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../part4/index.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../part4/HZNHUB.html" class="dropdown-item">Open Horizon Exchange Hub Services</a>
+</li>
+                                    
+<li>
+    <a href="../part4/HZNCLIENT.html" class="dropdown-item">Open Horizon agent on the Jetson</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">5 - Containerized Workloads <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../part5/index.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../part5/DOCKERFILE.md" class="dropdown-item">Build a multistage Dockerfile</a>
+</li>
+                                    
+<li>
+    <a href="../part5/DOCKERMODEL.md" class="dropdown-item">Build a MultiArch Docker Image</a>
+</li>
+                                    
+<li>
+    <a href="../part5/DOCKERDEPLOY.md" class="dropdown-item">Deploy container to DockerHub</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">6 - IEAM / Horizon Exchange Hub <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../part6/index.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../part6/HZNDEPLOY.html" class="dropdown-item">Deploy Horizon Pattern</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="create-dashboard.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../part3/index.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection/edit/main/docs/part2/display-objects.md" class="nav-link">Edit on johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#displaying-the-detected-objects" class="nav-link">Displaying the detected objects</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#displaying-an-annotated-image" class="nav-link">Displaying an annotated image</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#adding-a-table-of-objects" class="nav-link">Adding a table of objects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#next-steps" class="nav-link">Next Steps</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="displaying-the-detected-objects">Displaying the detected objects<a class="headerlink" href="#displaying-the-detected-objects" title="Permanent link">&para;</a></h1>
+<p>In this part we're going to display the detected objects on the dashboard in two
+different ways.</p>
+<p>First we will display an annotated version of the captured image with all of the
+objects highlighted. We will then add a table to the dashboard that lists them out.</p>
+<h2 id="displaying-an-annotated-image">Displaying an annotated image<a class="headerlink" href="#displaying-an-annotated-image" title="Permanent link">&para;</a></h2>
+<p>The <code>tf coco ssd</code> node has an option to output an annotated version of the image
+with all of the detected objects highlighted. The image is set on the <code>msg.image</code>
+message property.</p>
+<ol>
+<li>
+<p>Edit the <code>tf</code> node and configure the "Passthru" field to <code>Annotated Image</code></p>
+<p><img alt="" src="../images/tf-passthru.png" style="width:400px;" /></p>
+</li>
+<li>
+<p>Add a Change node, wired to the output of the <code>tf</code> node and configure it to move
+   <code>msg.image</code> to <code>msg.payload</code>.</p>
+<p><img alt="" src="../images/change-img-payload.png" style="width:400px" /></p>
+</li>
+<li>
+<p>Wire the Change node to the input of the WebCam node.</p>
+</li>
+<li>Click the Deploy button to save your changes.</li>
+</ol>
+<p><img alt="" src="../images/flow-tf-to-webcam.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Laying out flows</p>
+<p>With this latest addition, you can see we now have wires crossing each other
+and looping back on themselves. As flows evolve, their wiring can become
+quite complex. It is always worth spending some time trying to find a layout
+that remains 'readable'.</p>
+<p>There is a <a href="https://nodered.org/docs/developing-flows/">Flow Developer guide</a>
+in the Node-RED documenation that provides a number of tips on how to layout flows.</p>
+</div>
+<p>Now when you take an image on the dashboard, you should see the annotated version
+of the image.</p>
+<p><img alt="" src="../images/booth-display-all.png" /></p>
+<h2 id="adding-a-table-of-objects">Adding a table of objects<a class="headerlink" href="#adding-a-table-of-objects" title="Permanent link">&para;</a></h2>
+<p>Install the module <code>node-red-node-ui-table</code> using the Manage Palette option in the
+editor, or be running the following command in <code>~/.node-red</code>:</p>
+<pre><code>npm install node-red-node-ui-table
+</code></pre>
+
+<p>This adds the <code>ui_table</code> node to the palette which can be used to display tabular
+data.</p>
+<ol>
+<li>In the Dashboard sidebar of the Node-RED editor, hover over the <code>AI Photo Booth</code>
+   tab and click the <code>+ group</code> button.</li>
+<li>Edit the new group and set its properties:<ul>
+<li>Set the name to 'Objects'</li>
+<li>Set the width to <code>6</code> by clicking the button and dragging the box out to 6
+  units wide.</li>
+<li>Untick the 'Display group name' option</li>
+</ul>
+</li>
+<li>
+<p>Add a new <code>ui_table</code> node from the "dashboard" section of the palette into your
+   workspace. Edit its properties as follows:</p>
+<ul>
+<li>Add it to the 'Objects' group</li>
+<li>Set its size to <code>6x8</code></li>
+<li>Add two columns by clicking the <code>+ add</code> button at the bottom. Configure them as:<ul>
+<li>Property: <code>class</code>, Title: <code>Object Type</code></li>
+<li>Property: <code>score</code>, Title: <code>Score</code>, Format: <code>Progress (0-100)</code></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../images/table-config.png" style="width:400px" /></p>
+</li>
+<li>
+<p>Add a Change node to the workspace. Configure it to set <code>msg.payload</code> to the
+   expression <code>$append([],payload.{"class":class,"score":score*100,"bbox":bbox})</code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure you select the <code>expression</code> type for the <code>to</code> field of the Change node.
+This uses the <a href="https://jsonata.org" target="blank">JSONata</a> expression language.</p>
+</div>
+</li>
+<li>
+<p>Create the following wires between nodes:</p>
+<ul>
+<li>wire the output of the <code>tf</code> node to the Change node.</li>
+<li>wire the output of the Change node to the Table node</li>
+</ul>
+</li>
+<li>Click the Deploy button to save your changes.</li>
+</ol>
+<p>Now when you capture an image on the dashboard, the table should list the detected
+objects.</p>
+<p><img alt="" src="../images/flow-table.png" /></p>
+<p><img alt="" src="../images/booth-display-table.png" /></p>
+<div class="admonition idea">
+<p class="admonition-title">Side Quest - Star Ratings</p>
+<p>The JSONata expression used in the Change node mapped the <code>score</code> property
+of each detected object from its original <code>0-1</code> range to the <code>0-100</code> range
+expected by the <code>ui_table</code> node's "Progress" column type.</p>
+<p>The table supports a number of other formats of displaying numeric values.
+For example, it can map a number in the 0-100 range to a traffic light colour.
+It can also display a value in the range 0-5 as a number of stars.</p>
+<p>Edit the table node to display the score using the star format. See if you can
+modify the expression in the Change node to map the original score to the required
+<code>0-5</code> range.</p>
+</div>
+<div class="admonition idea">
+<p class="admonition-title">Side Quest - Clear the table</p>
+<p>With the current dashboard, when an image is captured it gets displayed in
+place of the live web cam view until the clear button is clicked.</p>
+<p>However clicking the button does not clear the table we've just added.</p>
+<p>Using what you've learnt so far, build a flow between the Clear button and
+the table node that will clear the table when the button is clicked.</p>
+<p><em>Hint:</em> think about what payload must be passed to the table in order to clear it.</p>
+</div>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<p>With the list of detected objects on the dashboard, the next task is to let the
+user <a href="select-objects.md">select which object to display</a>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

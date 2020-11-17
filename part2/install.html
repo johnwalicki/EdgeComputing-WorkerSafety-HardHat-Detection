@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="John Walicki">
+        <link rel="canonical" href="https://johnwalicki.github.io/EdgeComputing-WorkerSafety-HardHat-Detection/part2/install.html">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Install Node-RED - Edge Computing Worker Safety Hard Hat Detection</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/extra.css" rel="stylesheet">
+        <link href="../css/pdf-print.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Edge Computing Worker Safety Hard Hat Detection</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../README.md" class="nav-link">Introduction</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">1 - Build a Hard Hat Object Detection Model <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../part1/README.md" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../part1/LABEL.html" class="dropdown-item">Label Hard Hat Data</a>
+</li>
+                                    
+<li>
+    <a href="../part1/CLOUDSETUP.html" class="dropdown-item">Create IBM Cloud Resources</a>
+</li>
+                                    
+<li>
+    <a href="../part1/TRAIN.html" class="dropdown-item">Train your Hard Hat model</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">2 - Build a Dashboard Application <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="index.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="install.html" class="dropdown-item active">Install Node-RED</a>
+</li>
+                                    
+<li>
+    <a href="installing-nodes.html" class="dropdown-item">Installing Nodes</a>
+</li>
+                                    
+<li>
+    <a href="adding-tf.html" class="dropdown-item">TensorFlow in Node-RED</a>
+</li>
+                                    
+<li>
+    <a href="create-dashboard.html" class="dropdown-item">Create a dashboard</a>
+</li>
+                                    
+<li>
+    <a href="display-objects.html" class="dropdown-item">Displaying detected objects</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">3 - Configure a Jetson Nano <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../part3/index.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../part3/JETSON.html" class="dropdown-item">Configure Nvidia Jetson Nano</a>
+</li>
+                                    
+<li>
+    <a href="../part3/EDGEINFER.html" class="dropdown-item">Deploy / Test Model on the Jetson</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">4 - Open Horizon <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../part4/index.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../part4/HZNHUB.html" class="dropdown-item">Open Horizon Exchange Hub Services</a>
+</li>
+                                    
+<li>
+    <a href="../part4/HZNCLIENT.html" class="dropdown-item">Open Horizon agent on the Jetson</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">5 - Containerized Workloads <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../part5/index.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../part5/DOCKERFILE.md" class="dropdown-item">Build a multistage Dockerfile</a>
+</li>
+                                    
+<li>
+    <a href="../part5/DOCKERMODEL.md" class="dropdown-item">Build a MultiArch Docker Image</a>
+</li>
+                                    
+<li>
+    <a href="../part5/DOCKERDEPLOY.md" class="dropdown-item">Deploy container to DockerHub</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">6 - IEAM / Horizon Exchange Hub <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../part6/index.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../part6/HZNDEPLOY.html" class="dropdown-item">Deploy Horizon Pattern</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="index.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="installing-nodes.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection/edit/main/docs/part2/install.md" class="nav-link">Edit on johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#installing-node-red" class="nav-link">Installing Node-RED</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#running-node-red" class="nav-link">Running Node-RED</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#accessing-the-node-red-editor" class="nav-link">Accessing the Node-RED editor</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#next-steps" class="nav-link">Next Steps</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="installing-node-red">Installing Node-RED<a class="headerlink" href="#installing-node-red" title="Permanent link">&para;</a></h1>
+<p>Node-RED is published as a node.js module available on npm, as well as a container
+available on Docker Hub.</p>
+<p>The full guide for installing and running Node-RED is available <a href="https://nodered.org/docs/getting-started/local">here</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Linux</p>
+<p>The following steps assume you are running on Windows or OSX. If you are running
+on a Linux OS, or a device like a Raspberry Pi, the project provides a set of
+install scripts that will get node, npm and Node-RED all installed at the latest
+stable versions. Refer to the docs linked above.</p>
+</div>
+<p>You must have a supported version of Node.js installed. Node-RED supports
+the Active and LTS releases, 12.x and 14.x.</p>
+<p>You can then install Node-RED as a global module with the command:</p>
+<pre><code>npm install -g --unsafe-perm node-red
+</code></pre>
+
+<p>Depending on your Node.js installation, you may need to run this command using <code>sudo</code>.</p>
+<p>The install log output may contain some warnings - these can be ignored as long
+as the output ends with something like:</p>
+<pre><code>+ node-red@1.2.2
+added 332 packages from 341 contributors in 18.494s
+</code></pre>
+
+<h2 id="running-node-red">Running Node-RED<a class="headerlink" href="#running-node-red" title="Permanent link">&para;</a></h2>
+<p>Once installed, you should now have the <code>node-red</code> command available to run.</p>
+<div class="admonition note">
+<p class="admonition-title">Command not found</p>
+<p>If you do not have the <code>node-red</code> command available it may be a problem
+with your <code>PATH</code> configuration.</p>
+<p>Find where your global node modules are installed by running:</p>
+<pre><code> npm get prefix
+</code></pre>
+<p>Then ensure the <code>bin</code> subdirectory of that location is on your <code>PATH</code>.</p>
+</div>
+<p>When you run <code>node-red</code>, the log output will appear</p>
+<pre><code>23 Oct 00:12:01 - [info]
+
+Welcome to Node-RED
+===================
+
+23 Oct 00:12:01 - [info] Node-RED version: v1.2.2
+23 Oct 00:12:01 - [info] Node.js  version: v12.19.0
+23 Oct 00:12:01 - [info] Darwin 18.7.0 x64 LE
+23 Oct 00:12:01 - [info] Loading palette nodes
+23 Oct 00:12:03 - [info] Settings file  : /Users/nol/.node-red/settings.js
+23 Oct 00:12:03 - [info] User directory : /Users/nol/.node-red
+23 Oct 00:12:03 - [info] Server now running at http://127.0.0.1:1880/
+23 Oct 00:12:03 - [info] Flows file     : /Users/nol/.node-red/flows.json
+23 Oct 00:12:03 - [info] Starting flows
+23 Oct 00:12:03 - [info] Started flows
+</code></pre>
+
+<p>This output contains an important piece of information you will need  -
+the location of your <code>User directory</code>.</p>
+<h2 id="accessing-the-node-red-editor">Accessing the Node-RED editor<a class="headerlink" href="#accessing-the-node-red-editor" title="Permanent link">&para;</a></h2>
+<p>Assuming you are running Node-RED on your local computer, open a browser and access
+the url <a href="http://127.0.0.1:1880/" target="blank">http://127.0.0.1:1880/</a>. This will load the
+Node-RED editor - the tool used to build your applications.</p>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<p>The next task is to <a href="projects.md">enable the Projects feature</a>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

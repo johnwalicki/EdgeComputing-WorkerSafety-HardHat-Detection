@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="John Walicki">
+        <link rel="canonical" href="https://johnwalicki.github.io/EdgeComputing-WorkerSafety-HardHat-Detection/part1/CLOUDSETUP.html">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Create IBM Cloud Resources - Edge Computing Worker Safety Hard Hat Detection</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/extra.css" rel="stylesheet">
+        <link href="../css/pdf-print.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Edge Computing Worker Safety Hard Hat Detection</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../README.md" class="nav-link">Introduction</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">1 - Build a Hard Hat Object Detection Model <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="README.md" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="LABEL.html" class="dropdown-item">Label Hard Hat Data</a>
+</li>
+                                    
+<li>
+    <a href="CLOUDSETUP.html" class="dropdown-item active">Create IBM Cloud Resources</a>
+</li>
+                                    
+<li>
+    <a href="TRAIN.html" class="dropdown-item">Train your Hard Hat model</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">2 - Build a Dashboard Application <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../part2/index.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../part2/install.html" class="dropdown-item">Install Node-RED</a>
+</li>
+                                    
+<li>
+    <a href="../part2/installing-nodes.html" class="dropdown-item">Installing Nodes</a>
+</li>
+                                    
+<li>
+    <a href="../part2/adding-tf.html" class="dropdown-item">TensorFlow in Node-RED</a>
+</li>
+                                    
+<li>
+    <a href="../part2/create-dashboard.html" class="dropdown-item">Create a dashboard</a>
+</li>
+                                    
+<li>
+    <a href="../part2/display-objects.html" class="dropdown-item">Displaying detected objects</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">3 - Configure a Jetson Nano <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../part3/index.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../part3/JETSON.html" class="dropdown-item">Configure Nvidia Jetson Nano</a>
+</li>
+                                    
+<li>
+    <a href="../part3/EDGEINFER.html" class="dropdown-item">Deploy / Test Model on the Jetson</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">4 - Open Horizon <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../part4/index.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../part4/HZNHUB.html" class="dropdown-item">Open Horizon Exchange Hub Services</a>
+</li>
+                                    
+<li>
+    <a href="../part4/HZNCLIENT.html" class="dropdown-item">Open Horizon agent on the Jetson</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">5 - Containerized Workloads <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../part5/index.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../part5/DOCKERFILE.md" class="dropdown-item">Build a multistage Dockerfile</a>
+</li>
+                                    
+<li>
+    <a href="../part5/DOCKERMODEL.md" class="dropdown-item">Build a MultiArch Docker Image</a>
+</li>
+                                    
+<li>
+    <a href="../part5/DOCKERDEPLOY.md" class="dropdown-item">Deploy container to DockerHub</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">6 - IEAM / Horizon Exchange Hub <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../part6/index.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../part6/HZNDEPLOY.html" class="dropdown-item">Deploy Horizon Pattern</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="LABEL.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="TRAIN.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection/edit/main/docs/part1/CLOUDSETUP.md" class="nav-link">Edit on johnwalicki/EdgeComputing-WorkerSafety-HardHat-Detection</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#edge-computing-worker-safety-hard-hat-detection-section-2" class="nav-link">Edge Computing Worker Safety Hard Hat Detection - Section 2</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#create-ibm-cloud-resources" class="nav-link">Create IBM Cloud resources</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><em>Quick links :</em>
+<a href="/README.md">Home</a> - <a href="/part1/LABEL.md">Label Data</a> - <a href="/part1/CLOUDSETUP.md"><strong>Cloud Setup</strong></a> - <a href="/part1/TRAIN.md">Train Model</a> - <a href="/part2/JETSON.md">Setup Jetson</a> - <a href="/part2/EDGEINFER.md">Edge Inferencing</a> - <a href="/part3/HZNHUB.md">Horizon Hub</a> - <a href="/part3/HZNCLIENT.md">Horizon Client</a> - <a href="/part4/DOCKERMODEL.md">Docker Model</a> - <a href="/part4/HZNDEPLOY.md">Horizon Deploy</a></p>
+<hr />
+<h1 id="edge-computing-worker-safety-hard-hat-detection-section-2">Edge Computing Worker Safety Hard Hat Detection - Section 2<a class="headerlink" href="#edge-computing-worker-safety-hard-hat-detection-section-2" title="Permanent link">&para;</a></h1>
+<h2 id="create-ibm-cloud-resources">Create IBM Cloud resources<a class="headerlink" href="#create-ibm-cloud-resources" title="Permanent link">&para;</a></h2>
+<p>This section shows you how to use Cloud Annotations to label a dataset of hard hat images with White / Blue / Yellow / Person objects</p>
+<h3 id="lab-objectives">Lab Objectives<a class="headerlink" href="#lab-objectives" title="Permanent link">&para;</a></h3>
+<p>In this lab you will learn how to:</p>
+<ul>
+<li>Create an instance of Cloud Object Storage (COS) in IBM Cloud</li>
+<li>Upload the hard hat dataset to COS</li>
+<li>Create Watson Machine Learning instance</li>
+</ul>
+<h3 id="login-to-ibm-cloud">Login to IBM Cloud<a class="headerlink" href="#login-to-ibm-cloud" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Visit <a href="http://cloud.ibm.com">IBM Cloud</a> and, if you don't yet have an account, register for a (free) IBM Cloud Lite account.
+<img alt="IBM Cloud login" src="/images/IBM-Cloud-Login.png" /></li>
+</ul>
+<h3 id="create-a-cloud-object-storage-instance">Create a Cloud Object Storage instance<a class="headerlink" href="#create-a-cloud-object-storage-instance" title="Permanent link">&para;</a></h3>
+<ul>
+<li>IBM Cloud will provision 25GB for free.</li>
+<li>Visit the <a href="https://cloud.ibm.com/catalog/services/cloud-object-storage">IBM Cloud Catalog</a> COS page.</li>
+<li>Click on the <strong>Create</strong> button
+  <img alt="COS Create" src="/images/COS-Create.png" /></li>
+</ul>
+<h3 id="create-a-cloud-object-storage-bucket">Create a Cloud Object Storage bucket<a class="headerlink" href="#create-a-cloud-object-storage-bucket" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Click on the <strong>Create bucket</strong> button
+  <img alt="COS Create Bucket" src="/images/COS-CreateBucket.png" /></p>
+</li>
+<li>
+<p>Select a <strong>Standard</strong> predefined bucket</p>
+</li>
+<li>Name your bucket <code>hardhat-detection-&lt;your-initials&gt;</code></li>
+<li>The bucket name must be unique across the whole IBM Cloud Object Storage system
+  <img alt="COS Bucket name" src="/images/COS-BucketName.png" /></li>
+<li>Press the <strong>Next</strong> button</li>
+<li>Unzip the hardhat-dataset.zip that was downloaded in the previous section.</li>
+<li>Make certain you extract / unzip the .zip file.</li>
+<li>Navigate to the extracted files on your computer</li>
+<li>Drag the <code>_annotations.json</code> into the bucket.</li>
+<li>A progress bar and a confirmation will display.</li>
+</ul>
+<table style="width: 100%">
+    <colgroup>
+       <col span="1" style="width: 33%;">
+       <col span="1" style="width: 33%;">
+       <col span="1" style="width: 33%;">
+    </colgroup>
+<tr>
+<td>
+<img src="/images/COS-Upload-1.png">
+</td>
+<td>
+<img src="/images/COS-Upload-2.png">
+</td>
+<td>
+<img src="/images/COS-Upload-3.png">
+</td>
+</table>
+
+<ul>
+<li>Hold off on uploading the <code>images</code> folder until the next step where you will be able to upload the entire folder.</li>
+<li>Press the <strong>Next</strong> button.</li>
+<li>On the next panel, scroll down and press the <strong>View bucket configuration</strong> button.</li>
+<li>On the next panel, in the left navigation sidebar, click on <strong>Objects</strong></li>
+<li>Then, expand the <strong>Upload</strong> dropdown, and choose <strong>Folders</strong>
+  <img alt="COS Folder Upload" src="/images/COS-Upload-Folder-1.png" /></li>
+<li>In the popup dialog, click on <strong>Select folders</strong></li>
+<li>A operating system file dialog will open, navigate and select the <strong>images</strong> folder that you have extracted.</li>
+<li>A progress bar and a confirmation will display as the files are uploaded.
+  <img alt="COS Folder Upload" src="/images/COS-Upload-Folder-2.png" /></li>
+<li>Congratulations - You have uploaded the hardhat model dataset to IBM Cloud Object Storage.</li>
+</ul>
+<h3 id="create-an-watson-machine-learning-instance">Create an Watson Machine Learning Instance<a class="headerlink" href="#create-an-watson-machine-learning-instance" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Visit the <a href="https://cloud.ibm.com/catalog/services/machine-learning">IBM Cloud Catalog</a></li>
+<li>Search for <strong>Watson Machine Learning</strong>
+  <img alt="Catalog WML" src="/images/IBM-Cloud-Catalog-search-WML.png" /></li>
+<li>Click on the Machine Learning tile
+  <img alt="WML Service" src="/images/IBM-Cloud-Catalog-WML.png" /></li>
+<li>Click on the <strong>Create</strong> button
+  <img alt="WML Create" src="/images/IBM-Cloud-WML-Create.png" /></li>
+<li>You now have a <strong>Watson Machine Learning</strong> instance which will be used to train your Hard Hat model.
+  <img alt="WML Instance" src="/images/IBM-Cloud-WML-Instance.png" /></li>
+</ul>
+<hr />
+<p>You are now ready to train your Tensorflow hard hat model, so proceed to the next <a href="/part1/TRAIN.md">Train Model section</a>.</p>
+<hr />
+<p><a href="/README.md">Home</a> - <a href="/part1/LABEL.md">Label Data</a> - <a href="/part1/CLOUDSETUP.md"><strong>Cloud Setup</strong></a> - <a href="/part1/TRAIN.md">Train Model</a> - <a href="/part2/JETSON.md">Setup Jetson</a> - <a href="/part2/EDGEINFER.md">Edge Inferencing</a> - <a href="/part3/HZNHUB.md">Horizon Hub</a> - <a href="/part3/HZNCLIENT.md">Horizon Client</a> - <a href="/part4/DOCKERMODEL.md">Docker Model</a> - <a href="/part4/HZNDEPLOY.md">Horizon Deploy</a></p>
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

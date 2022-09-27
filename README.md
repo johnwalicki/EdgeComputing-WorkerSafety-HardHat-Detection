@@ -1,3 +1,5 @@
+# This tutorial has archived.
+
 # Edge Computing Worker Safety Hard Hat Detection
 Protect workers with a TensorFlow Hard Hat object detection model running on a Jetson Nano
 
